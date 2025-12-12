@@ -12,7 +12,7 @@ from PIL import Image
 
 from .exceptions import ChapterNotFoundError
 
-BASE_URL = "https://tcbscans.me"
+BASE_URL = "https://tcbonepiecechapters.com"
 _DEFAULT_CACHE_TIME = 20 * 60
 
 
@@ -54,7 +54,7 @@ class ChaptersDownloader(object):
         )
 
         return {
-            chapter: f'{BASE_URL}{a.attrs["href"]}'
+            chapter: f"{BASE_URL}{a.attrs['href']}"
             for a in chapter_anchors
             if (chapter := _get_chapter_number(a.attrs["href"].split("/")[-1]))
         }
